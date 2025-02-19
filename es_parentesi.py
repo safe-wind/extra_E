@@ -21,4 +21,3 @@ if count1==count2:
     print("True")
 else:
     print("False")
-
