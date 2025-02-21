@@ -1,5 +1,6 @@
+#es_parentesi
 
-bilanciate:str = input(str())
+bilanciate:str = input(f"Inserisci una serie di parentesi:", str())
 
 open_par = 0
 close_par = 0
@@ -19,10 +20,11 @@ for par in bilanciate:
         output= True
     elif close_par > open_par:
         output= False
-    
+        break
     
         
-if open_par==close_par:
+if open_par > close_par:
     print(output)
 else:
     print(output)
+
