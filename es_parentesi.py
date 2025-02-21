@@ -1,6 +1,8 @@
 #es_parentesi
 
-bilanciate:str = input(f"Inserisci una serie di parentesi:", str())
+domanda:str = "Inserisci una serie di parentesi e verifica se sono bilanciate: "
+print(domanda)
+bilanciate:str = input(str())
 
 open_par = 0
 close_par = 0
@@ -24,7 +26,7 @@ for par in bilanciate:
     
         
 if open_par > close_par:
-    print(output)
+    print(f"Sono bilanciate?: {output}")
 else:
-    print(output)
+    print(f"Sono bilanciate?: {output}")
 
