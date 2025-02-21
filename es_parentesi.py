@@ -1,23 +1,28 @@
 
-#es_parentesi
+bilanciate:str = input(str())
 
-caso1:str = "((()))"
-caso2:str = "(()"
-caso3:str = "()()()"
-caso4:str = "))(("
-caso5:str = "(()())"
+open_par = 0
+close_par = 0
+output = True
 
-count1 = 0
-count2 = 0
-
-for par in caso5:
+for par in bilanciate:
 
     if par=="(":
-        count1 += 1
-    if par==")":
-        count2 += 1
+        open_par += 1
+    elif par==")":
+        close_par += 1
+    else:
+        output = False
+        break
+
+    if close_par <= open_par:
+        output= True
+    elif close_par > open_par:
+        output= False
+    
+    
         
-if count1==count2:
-    print("True")
+if open_par==close_par:
+    print(output)
 else:
-    print("False")
+    print(output)
