@@ -8,7 +8,7 @@ for numeri in collection:
    
     index+=1
     stampa = (collection[0:index])
-    print(stampa)
+    print(*stampa)
     #print(', '.join(map(str,stampa)))
     
 
