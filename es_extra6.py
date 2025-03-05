@@ -5,8 +5,14 @@
 num_temp:list[int] = list() 
 num_final: list[int] = list() #par1
 
-def numeri_pari(par1:list[int]): #-> list[int]
+def numeri_pari(par1:list[int], par2:list[int]) -> list[int]:
 
+    for x in par1:
+        if x % 2 == 0:
+            par2.append(x)
+        else:
+            continue
+        
     return par1
 
 num_inp: int = int(input("inserisci un numero: (-0 to quit) "))
