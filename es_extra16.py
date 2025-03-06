@@ -5,22 +5,19 @@
 #old_macdonald('macdonald') --> MacDonald
 #Note: 'macdonald'.capitalize() returns 'Macdonald'
 
+#metodo slicing
 
 def capitalize1_4(word:str) -> str:
 
-    new_word:list[str] = list(word)
+#divido la stringa nelle parti che mi interessano:
 
-    for parola in new_word:
+    letter1 = word[0].upper()  #prima lettera della stringa
+    letter2to3 = word[1:3]     #seconda e terza lettera
+    letter4 = word[3].upper()  #quarta lettera 
+    rest_of_letters = word[4:] #quinta lettera in poi
 
-        for letter in parola:
-
-            new_word[0] = letter.upper()
-            lettera1 = new_word[0]
-            new_word[3] = letter.upper()
-            lettera4 = new_word[3]
-            return lettera1
-        return lettera4    
-    return "".join(new_word)
+#sommo tutte le variabili che compongono la stringa
+    return letter1 + letter2to3 + letter4+ rest_of_letters
 
 print(capitalize1_4("macdonald"))
 
