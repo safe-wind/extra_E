@@ -7,115 +7,6 @@
 # You should be able to accept input of the player position and then place a symbol on the board
 
 
-#creo la griglia per dove 'X' e 'O' verranno inseriti
-#per un totale di 9 caselle
-
-# pos123 = list([[],[],[]])
-# pos456 = list([[],[],[]])
-# pos789 = list([[],[],[]])
-
-# def display_board(line1:list[list], line2:list[list], line3:list[list]) -> list[list]:
-#     print(*pos123)
-#     print(*pos456)
-#     print(*pos789)  
-
-
-
-# #tutte le caselle sono vuote
-# occupati = 0
-
-# #chiedo ai giocatori di scegliere 'X' o 'O'
-# while True:
-
-#     #una scelta è esaustiva, di conseguenza all'alro
-#     #player verrà assegnato l'altro simbolo
-
-#     player1:str = input("Player1 & Player2: Please pick a marker 'X' or 'O' (Player1 choose first): ").upper()
-
-#     if player1 not in ['X', 'O']:
-#         print('Sorry you didn\'t choose the correct option')
-#         player1:str = input("Player1 & Player2: Please pick a marker 'X' or 'O' (Player1 choose first): ").upper()
-
-#     if player1 == 'X':
-#         player2 = 'O'
-#         break
-#     else:
-#         player2 = 'X'
-#         break
-
-# #tutte le caselle sono vuote
-# occupati = 0
-
-# while True:
-#     #calcolo la somma delle len() per ogni elemento di pos123, pos456, pos789
-#     occupati=len(pos123[0]) + len(pos123[1]) + len(pos123[2]) +len(pos456[0]) + len(pos456[1]) + len(pos456[2]) +\
-#         len(pos789[0]) + len(pos789[1]) + len(pos789[2])
-    
-#     #appena le 'caselle' saranno occupate, il gioco finirà
-#     if occupati == 9:break
-
-    
-#     position = int(input('Player1: Please enter a number'))
-#     print('\n'*10)
-    
-    
-#     match position:
-#         case 1:
-#             pos123[0].append(player1)
-#         case 2:
-#             pos123[1].append(player1)
-#         case 3:
-#             pos123[2].append(player1)
-#         case 4:
-#             pos456[0].append(player1)
-#         case 5:
-#             pos456[1].append(player1)
-#         case 6:
-#             pos456[2].append(player1)
-#         case 7:
-#             pos789[0].append(player1)
-#         case 8:
-#             pos789[1].append(player1)
-#         case 9:
-#             pos789[2].append(player1)
-#         case _:
-#             pass
-    
-#     display_board(pos123, pos456, pos789)
-
-#     occupati=len(pos123[0]) + len(pos123[1]) + len(pos123[2]) +len(pos456[0]) + len(pos456[1]) + len(pos456[2]) +\
-#         len(pos789[0]) + len(pos789[1]) + len(pos789[2])
-#     if occupati == 9:break
-
-#     position = int(input('Player2: Please enter a number'))
-#     print('\n'*100)
-
-#     match position:
-        
-#         case 1:
-#             pos123[0].append(player2)
-#         case 2:
-#             pos123[1].append(player2)
-#         case 3:
-#             pos123[2].append(player2)
-#         case 4:
-#             pos456[0].append(player2)
-#         case 5:
-#             pos456[1].append(player2)
-#         case 6:
-#             pos456[2].append(player2)
-#         case 7:
-#             pos789[0].append(player2)
-#         case 8:
-#             pos789[1].append(player2)
-#         case 9:
-#             pos789[2].append(player2)
-#         case _:
-#             pass
-#     display_board(pos123, pos456, pos789)
-
-
-
 #Clear output
 
 def clearOutput() -> None:
@@ -267,7 +158,6 @@ def gameStarted(table, player1, player2):
             checkWinLosePair(table, player1, player2)
             break
 
-[1,2,3,4,5,6,7,8,9,]
 
 def checkWinLosePair(table, player1, player2):
 
@@ -293,11 +183,6 @@ def checkWinLosePair(table, player1, player2):
             print("Pair!")
 
         
-            
-
-
-    
-
 #creo una lista dove ci vanno tutti i marker del gioco 
 table:list[str] = []
 
@@ -320,6 +205,6 @@ while True:
     #scelta di 'X' o 'O'
 
         player1, player2 = playerInput()
-
+        
         gameStarted(table, player1, player2)
         checkWinLosePair(table,player1,player2)
