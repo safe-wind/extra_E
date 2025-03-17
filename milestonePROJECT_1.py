@@ -111,8 +111,10 @@ def gameStarted(table, player1, player2):
             case _:
                 pass
         cont+=1
+        
         tableGame(table)
         if cont == 9:
+            checkWinLosePair(table, player1, player2)
             break
 
 
@@ -153,6 +155,7 @@ def gameStarted(table, player1, player2):
                 pass
         cont+=1
         tableGame(table)
+        
         if cont == 9:
             print("\n"*10)
             checkWinLosePair(table, player1, player2)
@@ -164,23 +167,26 @@ def checkWinLosePair(table, player1, player2):
 
     match table:
         case table if table[0] == table[1] == table[2]: #casi orizzontali
-            print(f"{player1 or player2} wins!")
+            check = print(f"{player1 or player2} wins!")
         case table if table[3] == table[4] == table[5]:
-            print(f"{player1 or player2} wins!")
+            check = print(f"{player1 or player2} wins!")
         case table if table[6] == table[7] == table[8]:
-            print(f"{player1 or player2} wins!")
+            check = print(f"{player1 or player2} wins!")
         case table if table[0] == table[3] == table[6]: #caso tris verticale a sinistra
-            print(f"{player1 or player2} wins!")
+            check = print(f"{player1 or player2} wins!")
         case table if table[1] == table[4] == table[7]: #caso tris verticale centro
-            print(f"{player1 or player2} wins!")
+            check = print(f"{player1 or player2} wins!")
         case table if table[2] == table[5] == table[8]: #caso tris verticale destra
-            print(f"{player1 or player2} wins!")
+            check = print(f"{player1 or player2} wins!")
         case table if table[0] == table[4] == table[8]: #caso diagonale da sx a dx
-            print(f"{player1 or player2} wins!")
+            check = print(f"{player1 or player2} wins!")
         case table if table[2] == table[4] == table[6]: #caso diagonale da dx a sx
-            print(f"{player1 or player2} wins!")
+            check = print(f"{player1 or player2} wins!")
         case _:
-            print("Pair!")
+            check = print("Pair!")
+        
+    return check
+        
 
         
 #creo una lista dove ci vanno tutti i marker del gioco 
