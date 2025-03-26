@@ -5,9 +5,22 @@ def count_isolated(numbers:list[int]) -> int:
     isolati = 0
 
     for i in range(len(numbers)):
+        #print(i)
+        #il primo e ultimo numeri sono isolati  se non hanno alla loro destra o sinistra un numero uguale
 
-        if (i == 0 or numbers[i] != numbers[i-1]) and (i == len(numbers)-1 or numbers[i] != numbers[i+1]):
+        if numbers[i]!= numbers[len(numbers)-1]:
+            if numbers[i] == numbers[i+1]:
+                continue
+            elif numbers[i] == numbers[i-1]:
+                continue
+
+        if numbers[i] != numbers[i-1]:
             isolati +=1 
+            
+        elif numbers[i] != numbers[i-1] and numbers[i+1]:
+            isolati +=1
+        
+
     return isolati
    
 
