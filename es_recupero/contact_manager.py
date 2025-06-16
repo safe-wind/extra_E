@@ -84,32 +84,3 @@ class ContactManager:
                 
         return lista_contatti_phonenumb
 
-# Creo il gestore con dei contatti fittizi
-contatti_iniziali = {
-    "Mario Rossi": ["1234567890"],
-    "Luca Bianchi": ["0987654321"],
-    "Anna Verdi": ["1112223333", "3332221111"]
-}
-
-gestore = ContactManager(contatti_iniziali)
-
-# 1. Creo un nuovo contatto
-gestore.create_contact("Giulia Neri", ["4445556666"])
-
-# 2. Aggiungo un numero a un contatto esistente
-gestore.add_phone_number("Mario Rossi", "2223334444")
-
-# 3. Rimuovo un numero da un contatto
-gestore.remove_phone_number("Anna Verdi", "3332221111")
-
-# 4. Aggiorno un numero di telefono
-gestore.update_phone_number("Luca Bianchi", "0987654321", "9998887777")
-
-# 5. Elenco tutti i contatti
-print("Contatti:", gestore.list_contacts())
-
-# 6. Elenco i numeri di un contatto
-print("Numeri di Mario Rossi:", gestore.list_phone_number("Mario Rossi"))
-
-# 7. Cerco un contatto per numero di telefono
-print("Contatto con numero 4445556666:", gestore.search_contact_by_phone("4445556666"))
